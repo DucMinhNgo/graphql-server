@@ -6,6 +6,9 @@ const mongoose = require('mongoose');
 const typeDefs = require('./schema/schema');
 const resolvers = require('./resolver/resolver');
 
+// load db method
+const mongoDataMethod = require('./data/db');
+
 // connect to mongobd
 const connectDB = async () => {
   try {
@@ -28,6 +31,7 @@ connectDB();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  context: () => ({ mongoDataMethod }), // truyen data vaof resolver
 });
 
 const app = express();
