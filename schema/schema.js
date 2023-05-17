@@ -25,7 +25,7 @@ const typeDefs = gql`
 
   type Mutation {
     createAuthor(name: String, age: Int):Author
-    createBook(name: String, genre: String):Book
+    createBook(name: String, genre: String, authorId: String):Book
   }
 `;
 // Query: lấy dữ liệu

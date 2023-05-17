@@ -27,6 +27,7 @@ const resolvers = {
       return await mongoDataMethod.createAuthor(args);
     },
     createBook: async (parent, args, {mongoDataMethod}) => {
+      // console.log({args});
       return await mongoDataMethod.createBook(args);
     },
   }
